@@ -1,0 +1,30 @@
+{
+  "name": "Optopus",
+  "version": "1.0.0",
+  "description": "grabador de comandos Optopus Automation",
+  "main": "controlador.js",
+  "scripts": {
+    "test": "node controlador.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/area-5I/Optopus"
+  },
+  "keywords": [
+    "Arduino",
+    "SerialPort",
+    "Express",
+    "WebApp"
+  ],
+  "author": "sass3r",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/area-5I/Optopus/issues"
+  },
+  "homepage": "https://github.com/area-5I/Optopus",
+  "dependencies": {
+    "express": "^4.10.6",
+    "nunjucks": "^1.1.0",
+    "serialport": "^1.4.9"
+  }
+}
