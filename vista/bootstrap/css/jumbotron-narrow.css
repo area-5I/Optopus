@@ -54,6 +54,15 @@ body {
   font-size: 21px;
 }
 
+.jtron {
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.monitorSerial {
+  width: 600px;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
