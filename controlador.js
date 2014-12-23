@@ -13,6 +13,14 @@ app.get("/",function(req,res){
   res.render("index.html");
 });
 
+app.get("/master",function(req,res){
+  res.render("master.html");
+});
+
+app.get("/slave",function(req,res){
+  res.render("slave.html");
+});
+
 console.log("optopus server run localhost:8085")
 
 app.listen(8085);
