@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maestro</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li class="active">
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Acerca De</a>
+            </li>
+            <li>
+              <a href="#">Contactanos</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Maestro</h3>
+      </div>
+
+      <div class="jtron">
+          <h3>Tipo de maestro:</h3>
+          <div>
+            <input type="radio" name="option" onclick="dispIP()"  value="ethernet" checked> Ethernet
+            <input type="radio" name="option" onclick="dispIP()"  value="wifi"> Wifi
+            <input type="radio" name="option" onclick="dispGSM()" value="gsm"> GSM
+          </div>
+
+          <div id="dispIP" style="display:block;">
+            <h3>Direccion IP:</h3>
+            <input type="text" value="192.168.0.1">
+            <h3>Puerto:</h3>
+            <input type="number" value="8080">
+          </div>
+
+          <div id="dispGSM" style="display:none;">
+            <h3>Numero:</h3>
+            <input type="text" value="75992745">
+          </div>
+
+          <div>
+            <h3>Puerto Serial:</h3>
+            <select>
+              <option>COM13</option>
+              <option>COM8</option>
+              <option>COM15</option>
+            </select>
+            <h3>Monitor Serial:</h3>
+            <textarea class="monitorSerial" rows="10" ></textarea>
+            <br>
+            <a href="#" class="btn btn-success">Grabar Datos</a>
+
+          </div>
+
+          <br>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Sawers I&D 2014</p>
+      </footer>
+
+    </div><!-- end container-->
+    <script src="/bootstrap/js/scriptview.js"></script>
+  </body>
+</html>
