@@ -4,6 +4,7 @@
     <title>Maestro</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/bootstrap/css/placeholder.css" rel="stylesheet">
   </head>
 
   <body>
@@ -11,14 +12,14 @@
       <div class="header">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li class="active">
+            <li>
               <a href="/">Inicio</a>
             </li>
-            <li>
-              <a href="#">Acerca De</a>
+            <li class="active">
+              <a href="/master">Maestro</a>
             </li>
             <li>
-              <a href="#">Contactanos</a>
+              <a href="/slave">Esclavo</a>
             </li>
           </ul>
         </nav>
@@ -35,28 +36,43 @@
 
           <div id="dispIP" style="display:block;">
             <h3>Direccion IP:</h3>
-            <input type="text" value="192.168.0.1">
+            <input id="ip" type="text" value="192.168.0.15">
             <h3>Puerto:</h3>
-            <input type="number" value="8080">
+            <input id="port" type="number" value="8080">
           </div>
 
           <div id="dispGSM" style="display:none;">
-            <h3>Numero:</h3>
-            <input type="text" value="75992745">
+            <h3>Comando 1:</h3>
+            <input type="text" value="on">
+            <h3>Comando 2:</h3>
+            <input type="text" value="off">
+            <h3>Comando 3:</h3>
+            <input type="text" value="pot">
+            <h3>Password:</h3>
+            <input type="password" value="password">
           </div>
 
           <div>
             <h3>Puerto Serial:</h3>
-            <select>
-              <option>COM13</option>
-              <option>COM8</option>
-              <option>COM15</option>
+            <select id="selector">
+              {%for port in ports%}
+              <option>{{port}}</option>
+              {%endfor%}
             </select>
             <h3>Monitor Serial:</h3>
-            <textarea class="monitorSerial" rows="10" ></textarea>
+            <textarea disabled id="buffer" class="monitorSerial" rows="10" placeholder="Datos Seriales:"></textarea>
             <br>
-            <a href="#" class="btn btn-success">Grabar Datos</a>
 
+            <div id="grabarDispIP" style="display:block;">
+              <button id="open" class="btn btn-success" onclick="abrirPuerto()">Abrir Puerto</button>
+              <button class="btn btn-success" onclick="grabarDispIP()">Grabar Datos Ethernet</button>
+              <button class="btn btn-info" onclick="limpiarBuffer()">Limpiar</button>
+            </div>
+            <div id="grabarDispGSM" style="display:none;">
+              <button class="btn btn-success" onclick="">Abrir Puerto</button>
+              <button class="btn btn-success" onclick="">Grabar Datos GSM</button>
+              <button class="btn btn-info" onclick="">Limpiar</button>
+            </div>
           </div>
 
           <br>
@@ -67,6 +83,7 @@
       </footer>
 
     </div><!-- end container-->
+    <script src="http://localhost:8081/socket.io/socket.io.js"></script>
     <script src="/bootstrap/js/scriptview.js"></script>
   </body>
 </html>
