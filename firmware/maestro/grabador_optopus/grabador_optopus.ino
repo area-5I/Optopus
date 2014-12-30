@@ -97,6 +97,7 @@ void configPort(){
   }else{
     EEPROM.write(4,port);
     EEPROM.write(5,'x');
+    EEPROM.write(6,'n');
     Serial.println("maestro: correctamente configurado en el puerto:");
     Serial.println(port);
   }
@@ -123,6 +124,7 @@ void procesarPuerto(int p){
     num2 = cad2.toInt();
     EEPROM.write(4,num1);
     EEPROM.write(5,num2);
+    EEPROM.write(6,'n');
     Serial.println("maestro: correctamente configurado en el puerto: ");
     Serial.println(getPuerto());
   }
