@@ -25,6 +25,8 @@
   "dependencies": {
     "express": "^4.10.6",
     "nunjucks": "^1.1.0",
-    "serialport": "^1.4.9"
+    "serialport": "^1.4.9",
+    "socket.io": "^1.2.1",
+    "socket.io-client": "^1.2.1"
   }
 }
