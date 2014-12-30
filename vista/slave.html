@@ -11,14 +11,14 @@
       <div class="header">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li class="active">
+            <li>
               <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="#">Acerca De</a>
+              <a href="/master">Maestro</a>
             </li>
-            <li>
-              <a href="#">Contactanos</a>
+            <li class="active">
+              <a href="/slave">Esclavo</a>
             </li>
           </ul>
         </nav>
@@ -43,13 +43,14 @@
           </select>
           <h3>Puerto Serial:</h3>
           <select>
-            <option>COM13</option>
-            <option>COM8</option>
-            <option>COM15</option>
+            {%for port in ports%}
+            <option>{{port}}</option>
+            {%endfor%}
           </select>
           <h3>Monitor Serial:</h3>
           <textarea class="monitorSerial" rows="10" ></textarea>
           <br>
+          <a href="#" class="btn btn-success">Abrir Puerto</a>
           <a href="#" class="btn btn-success">Grabar Datos</a>
           <br>
           <br>
