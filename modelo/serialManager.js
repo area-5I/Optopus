@@ -93,7 +93,7 @@ function initialize(){
   setTimeout(function(){
    cerrarPuerto();
    setTimeout(function(){
-    socket.emit("llegaronDatos","OK"); 
+    socket.emit("llegaronDatos","OK");
    },100);
   },100);
 }
@@ -125,7 +125,23 @@ var grabarDispIP = function(ip,puerto){
   }
 }
 
+var grabarIDSlave = function(id){
+  var cmd = "2c" + id + "3";
+  var msg = "enviando: " + cmd;
+  if(connection){
+    socket.emit('llegaronDatos',msg);
+    connection.write(cmd + '\n');
+    setTimeout(function(){
+      cerrarPuerto();
+      resetLeonardo();
+    },1000);
+  }else{
+    socket.emit("abraElPuerto");
+  }
+}
+
 module.exports.listarPuertos = listarPuertos;
 module.exports.abrirPuerto = abrirPuerto;
 module.exports.cerrarPuerto = cerrarPuerto;
 module.exports.grabarDispIP = grabarDispIP;
+module.exports.grabarIDSlave = grabarIDSlave;
