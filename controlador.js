@@ -39,6 +39,10 @@ socketio.sockets.on("connection", function(socket){
     serialManager.grabarDispIP(ip,puerto);
   });
 
+  socket.on("grabarIDSlave",function(id){
+    serialManager.grabarIDSlave(id);
+  })
+
   socket.on("abraElPuerto",function(){
     socketio.sockets.emit("firstOpen");
   });
