@@ -4,6 +4,7 @@
     <title>Esclavo</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/bootstrap/css/placeholder.css" rel="stylesheet">
   </head>
 
   <body>
@@ -27,7 +28,7 @@
 
       <div class="jtron">
           <h3>Identificador:</h3>
-          <select>
+          <select id="idSlave">
             <option>A</option>
             <option>B</option>
             <option>C</option>
@@ -40,18 +41,33 @@
             <option>J</option>
             <option>K</option>
             <option>L</option>
+            <option>M</option>
+            <option>N</option>
+            <option>O</option>
+            <option>P</option>
+            <option>Q</option>
+            <option>R</option>
+            <option>S</option>
+            <option>T</option>
+            <option>U</option>
+            <option>V</option>
+            <option>W</option>
+            <option>X</option>
+            <option>Y</option>
+            <option>Z</option>
           </select>
           <h3>Puerto Serial:</h3>
-          <select>
+          <select id="select">
             {%for port in ports%}
             <option>{{port}}</option>
             {%endfor%}
           </select>
           <h3>Monitor Serial:</h3>
-          <textarea class="monitorSerial" rows="10" ></textarea>
+          <textarea disabled id="buff" class="monitorSerial" rows="10" placeholder="Datos Seriales:"></textarea>
           <br>
-          <a href="#" class="btn btn-success">Abrir Puerto</a>
-          <a href="#" class="btn btn-success">Grabar Datos</a>
+          <button id="abrir" class="btn btn-success" onclick="abrirPuerto()">Abrir Puerto</button>
+          <button class="btn btn-success" onclick="grabarIDSlave()">Grabar ID</button>
+          <button class="btn btn-info" onclick="limpiarBuffer()">Limpiar</button>
           <br>
           <br>
       </div>
@@ -61,5 +77,7 @@
       </footer>
 
     </div><!-- end container-->
+    <script src="http://localhost:8081/socket.io/socket.io.js"></script>
+    <script src="/bootstrap/js/scriptslave.js"></script>
   </body>
 </html>
